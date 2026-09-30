@@ -1,0 +1,69 @@
+{
+  "starter_reference": {
+    "IID, FedAvg": {
+      "f1": 0.9620345405523574,
+      "kdd_f1": 0.754965034965035
+    },
+    "Non-IID, FedAvg": {
+      "f1": 0.9578149157034529,
+      "kdd_f1": 0.7241143749390065
+    }
+  },
+  "intermediate": {
+    "IID reference, FedAvg": {
+      "f1_mean": 0.9906890130353817,
+      "f1_std": 0.0,
+      "kdd_f1_mean": 0.7708509637987776
+    },
+    "Non-IID, naive FedAvg": {
+      "f1_mean": 0.9842875752552404,
+      "f1_std": 0.001262599581094282,
+      "kdd_f1_mean": 0.7668963491997048
+    },
+    "Non-IID, skew-aware (ours)": {
+      "f1_mean": 0.9880486307570108,
+      "f1_std": 0.0008984309515944623,
+      "kdd_f1_mean": 0.7785981372831489
+    },
+    "error_reduction_percent": 23.93682428311894
+  },
+  "ablation": [
+    {
+      "configuration": "1. Naive FedAvg",
+      "held-out F1": 0.9852,
+      "KDDTest+ F1": 0.7695
+    },
+    {
+      "configuration": "2. + logit-adjusted local loss",
+      "held-out F1": 0.9849,
+      "KDDTest+ F1": 0.7693
+    },
+    {
+      "configuration": "3. + square-root client weights",
+      "held-out F1": 0.9866,
+      "KDDTest+ F1": 0.7771
+    },
+    {
+      "configuration": "4. + server momentum (full method)",
+      "held-out F1": 0.9885,
+      "KDDTest+ F1": 0.783
+    }
+  ],
+  "exported": {
+    "metrics": {
+      "precision": 0.9926,
+      "recall": 0.9844,
+      "f1": 0.9885
+    },
+    "confusion_matrix": [
+      [
+        7961,
+        51
+      ],
+      [
+        109,
+        6879
+      ]
+    ]
+  }
+}
