@@ -1,6 +1,6 @@
 # SecureAI Hackath🔐n Day 2
 
-# Heavenz: Skew-Aware Aggregation for Federated Intrusion Detection
+# Skew-Aware Aggregation for Federated Intrusion Detection
 
 ![Cover: skew-aware aggregation versus naive FedAvg on skewed clients](figures/cover_image.png)
 
