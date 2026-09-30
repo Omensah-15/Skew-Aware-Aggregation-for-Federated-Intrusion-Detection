@@ -1,4 +1,4 @@
-# Heavenz: Skew-Aware Aggregation for Federated Intrusion Detection
+# Skew-Aware Aggregation for Federated Intrusion Detection
 
 **Subtitle:** Fixing FedAvg when five banks see very different traffic: 24% lower error on NSL-KDD
 
