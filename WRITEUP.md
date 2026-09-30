@@ -4,6 +4,8 @@
 
 **Track submitted:** Intermediate
 
+![Cover: skew-aware aggregation versus naive FedAvg on skewed clients](figures/cover_image.png)
+
 ## Headline result (Intermediate track)
 
 F1 on the organizers' 15,000-row held-out set, mean of 3 training seeds. Same 128-64 MLP, 25 rounds, 2 local epochs, learning rate 0.1 and client split for both rows. Only the aggregation differs.
@@ -15,6 +17,10 @@ F1 on the organizers' 15,000-row held-out set, mean of 3 training seeds. Same 12
 | IID reference (FedAvg, upper bound) | 0.9907 | 0.7709 |
 
 The classification error (1 - F1) falls by 23.9%, and the method closes about 59% of the gap between skewed FedAvg and the IID reference. The exported model (`model_scripted.pt`, `submission.json` in the repo root, seed 0) scores 0.9885 F1 (precision 0.9926, recall 0.9844) on the held-out set.
+
+![Intermediate track: held-out F1 over rounds for IID reference, naive FedAvg and skew-aware aggregation](figures/intermediate_f1_over_rounds.png)
+
+*Held-out F1 over communication rounds, mean of 3 seeds (band = 1 standard deviation).*
 
 ## Problem
 
@@ -36,6 +42,10 @@ Five banks cannot pool traffic data, so they train locally and average model upd
 | 4. + server momentum (full method) | 0.9885 | 0.7830 |
 
 What worked and what did not: the logit adjustment alone did nothing measurable (-0.0003). Square-root weights and momentum carry most of the gain. The improvement is +0.0038 F1, about three standard deviations of the seed noise, so it is real but modest. A FedProx penalty (mu = 0.01) matched FedAvg to within 0.001 in early sweeps and was dropped.
+
+<img src="figures/confusion_matrix.png" alt="Held-out confusion matrix of the exported model" width="380">
+
+*Confusion matrix of the exported model on the 15,000-row held-out set.*
 
 ## Evaluation
 
