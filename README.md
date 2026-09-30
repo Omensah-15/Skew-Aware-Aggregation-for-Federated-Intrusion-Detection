@@ -1,3 +1,5 @@
+# SecureAI Hackath🔐n Day 2
+
 # Skew-Aware Aggregation for Federated Intrusion Detection
 
 CAIRLab hackathon, Day 2, **Intermediate track** (non-IID aggregation). Five simulated banks train a shared NSL-KDD intrusion detector without pooling data.
