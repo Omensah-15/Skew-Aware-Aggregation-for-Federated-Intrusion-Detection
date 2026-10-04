@@ -54,7 +54,3 @@ We rebuilt the starter pipeline with its fixed seed. The reserved 15,000 rows ar
 ## Limitations
 
 The gain is modest on a strong model. Results come from 5 simulated clients on CPU, and the split uses a single Dirichlet draw (seed 42). Other skew patterns were not tested.
-
-## Reproduce
-
-Run `federated_ids_intermediate.ipynb` top to bottom (about 12 minutes on CPU). It downloads NSL-KDD, builds the splits, runs every experiment and writes `model_scripted.pt` and `submission.json`. See `README.md`.
