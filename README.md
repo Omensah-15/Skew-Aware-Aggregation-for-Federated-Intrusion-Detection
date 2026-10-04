@@ -36,8 +36,13 @@ Mean of 3 seeds, band = 1 standard deviation.
 | `results.json` | Every number reported in the write-up |
 | `figures/` | Cover image, F1-over-rounds chart, confusion matrix |
 | `WRITEUP.md`| writeup text|
-```
-```
+
 ## Method
 
 `SkewAwareAgg`: a logit-adjusted local loss (each client adds the log-odds of its own label prior during local training), square-root client weights, and server momentum of 0.5.
+
+## Team Members
+
+1. **Bernice Dompreh** — [bernicedompreh08@gmail.com](mailto:bernicedompreh08@gmail.com)
+2. **ADJEI-DANSO NANA YAW OWUSU** — [Nadjeidanso@gmail.com](mailto:Nadjeidanso@gmail.com)
+3. **Obed Mensah** — [heavenzlebron7@gmail.com](mailto:heavenzlebron7@gmail.com)
