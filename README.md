@@ -35,27 +35,9 @@ Mean of 3 seeds, band = 1 standard deviation.
 | `predictions.csv` | Predictions in `sample_submission.csv` format (`Id`, `Expected`), same row order as `test_public.csv` |
 | `results.json` | Every number reported in the write-up |
 | `figures/` | Cover image, F1-over-rounds chart, confusion matrix |
-| `WRITEUP.md`, `VIDEO_SCRIPT.md` | Kaggle writeup text and a 3-minute video script |
-
-## Reproduce
-
+| `WRITEUP.md`| writeup text|
 ```
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-jupyter nbconvert --to notebook --execute --inplace federated_ids_intermediate.ipynb
 ```
-
-Needs internet access to download NSL-KDD from GitHub. About 6 minutes on one CPU thread; no GPU. The data split uses the starter's fixed seed (42) and federated runs use seeds 0, 1 and 2. Results can differ in the last digit across hardware and library versions.
-
-## Use the exported model
-
-```python
-import torch
-model = torch.jit.load("model_scripted.pt").eval()
-# x: float32 tensor of shape (n, 41), standardized exactly as in Section 1 of the notebook
-prediction = (torch.sigmoid(model(x)) > 0.5).int()   # 1 = attack, 0 = normal
-```
-
 ## Method
 
 `SkewAwareAgg`: a logit-adjusted local loss (each client adds the log-odds of its own label prior during local training), square-root client weights, and server momentum of 0.5.
